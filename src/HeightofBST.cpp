@@ -40,7 +40,8 @@ struct node{
 	struct node *right;
 };
 
-
+int get_res_l(struct node *, int );
+int get_res_r(struct node *, int );
 int get_height(struct node *root){
 	int l, r;
 	if (root==NULL)
@@ -85,6 +86,7 @@ int get_res_l(struct node *root, int res)
 			res = res + root->right->data;
 		get_res_l(root->left, res);
 	}
+	return res;
 }
 
 int get_res_r(struct node *root, int res)
@@ -97,4 +99,5 @@ int get_res_r(struct node *root, int res)
 			res = res + root->right->data;
 		get_res_l(root->right, res);
 	}
+	return res;
 }

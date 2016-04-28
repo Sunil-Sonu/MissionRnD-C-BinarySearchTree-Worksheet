@@ -15,7 +15,6 @@ it and understand how testing works .
 */
 
 #include <stdio.h>
-int in = 0, pr = 0, po = 0;
 struct node{
 	struct node * left;
 	int data;
@@ -28,7 +27,6 @@ void poor(struct node *, int *);
 void inorder(struct node *root, int *arr){
 	if (root == NULL || arr == NULL)
 		return;
-	in = 0;
 	inor(root, arr);
 }
 void inor(struct node *root, int *arr)
@@ -40,7 +38,6 @@ void inor(struct node *root, int *arr)
 void preorder(struct node *root, int *arr){
 	if (root == NULL || arr == NULL)
 		return;
-	pr = 0;
 	preor(root, arr);
 }
 void preor(struct node *root, int *arr)
@@ -52,7 +49,6 @@ void preor(struct node *root, int *arr)
 void postorder(struct node *root, int *arr){
 	if (root == NULL || arr == NULL)
 		return;
-	po = 0;
 	poor(root, arr);
 }
 void poor(struct node *root, int *arr)

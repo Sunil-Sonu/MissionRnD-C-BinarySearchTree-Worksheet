@@ -32,7 +32,8 @@ struct node{
 	int data;
 	struct node *right;
 };
-struct node * to_array(int *, int, int);
+struct node * to_arr(int *, int, int);
+struct node *c_node(int);
 struct node * convert_array_to_bst(int *arr, int len){
 	int f = 0, l = len - 1;
 	if (arr==NULL)
@@ -53,6 +54,7 @@ struct node *to_arr(int *arr, int f, int l)
 	struct node *root = c_node(arr[m]);
 	root->left = to_arr(arr, f, m - 1);
 	root->right = to_arr(arr, m + 1, l);
+	return root;
 }
 struct node *c_node(int data)
 {

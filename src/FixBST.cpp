@@ -46,7 +46,7 @@ void fix(struct node **s, struct node **m, struct node **e, struct node **p, str
 	if (root != NULL)
 	{
 		fix(s, m, e, p, root->left);
-		if (root->data < p->data && *p)
+		if (root->data < *p->data && *p)
 		{
 			*s = *p;
 			*m = root;
@@ -59,7 +59,8 @@ void fix(struct node **s, struct node **m, struct node **e, struct node **p, str
 }
 void swap(int *x, int *y)
 {
-	int *t = *x;
+	int 
+	*t = x;
 	*x = *y;
-	*y = t;
+	*y = *t;
 }

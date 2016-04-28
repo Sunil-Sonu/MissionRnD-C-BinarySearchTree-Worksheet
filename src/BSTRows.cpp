@@ -33,12 +33,12 @@ struct node{
 
 int* BSTRighttoLeftRows(struct node* root)
 {
-	int *res,int i=0,height;
+	int *res; int i = 0, height;
 	if (root==NULL)
     return NULL;
 	res = (int *)malloc(sizeof(int) * 30);
 	height = getDepth(root);
-	
+	return res;
 }
 int getDepth(struct node *root)
 {
