@@ -21,7 +21,7 @@ struct node{
 	int data;
 	struct node *right;
 };
-
+int in = 0, pr = 0, po = 0;
 void inor(struct node *, int *);
 void preor(struct node *, int *);
 void poor(struct node *, int *);
