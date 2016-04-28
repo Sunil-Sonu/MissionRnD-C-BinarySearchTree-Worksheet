@@ -19,7 +19,7 @@ Output :Return An array which has All the elements in row by row order (R->L) .
 
 Note : Return -1 for Invalid Cases .
 */
-
+int getDepth(struct node *);
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -33,5 +33,22 @@ struct node{
 
 int* BSTRighttoLeftRows(struct node* root)
 {
+	int *res,int i=0,height;
+	if (root==NULL)
     return NULL;
+	res = (int *)malloc(sizeof(int) * 30);
+	height = getDepth(root);
+	
+}
+int getDepth(struct node *root)
+{
+	int lft, rgt;
+	if (root == NULL)
+		return 0;
+	else
+	{
+		lft = getDepth(root->left);
+		rgt = getDepth(root->right);
+	}
+	return (lft > rgt) ? lft : rgt;
 }
