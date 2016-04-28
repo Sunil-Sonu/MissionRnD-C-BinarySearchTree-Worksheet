@@ -32,26 +32,25 @@ struct node{
 	int data;
 	struct node *right;
 };
-
-
+struct node * to_array(int *, int, int);
 struct node * convert_array_to_bst(int *arr, int len){
 	int f = 0, l = len - 1;
 	if (arr==NULL)
 	return NULL;
 	else
 	{
-		struct node tree;
+		struct node* tree;
 		tree = to_arr(arr, f, l);
 		return tree;
 	}
 }
-struct node *to_arr(int *arrr, int f, int l)
+struct node *to_arr(int *arr, int f, int l)
 {
 	if (f > l)
 		return NULL;
 	int m = (f + l) / 2
 		;
-	struct node *root = c_node(arr[mid]);
+	struct node *root = c_node(arr[m]);
 	root->left = to_arr(arr, f, m - 1);
 	root->right = to_arr(arr, m + 1, l);
 }

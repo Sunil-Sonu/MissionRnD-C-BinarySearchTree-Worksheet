@@ -52,10 +52,10 @@ int get_height(struct node *root){
 		l = get_height(root->left);
 		r = get_height(root->right);
 	}
-	if (l > d)
+	if (l > r)
 		return l + 1;
 	else
-		r + 1;
+		return r + 1;
 }
 
 int get_left_subtree_sum(struct node *root){
